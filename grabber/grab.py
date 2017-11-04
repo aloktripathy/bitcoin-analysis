@@ -32,4 +32,3 @@ def grab_through_bit_ticker(crypto_currency, exchange_currency):
 
 
 grab_zebpay_ticker(constants.CURRENCY_INR)
-grab_zebpay_ticker(constants.CURRENCY_USD)
