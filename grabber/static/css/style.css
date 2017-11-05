@@ -6,7 +6,6 @@
     margin: 0 5px 0 5px;
 }
 
-#chart-container {
+#chart-container, commission-container{
     width: 100%;
-    height: 300px;
 }
