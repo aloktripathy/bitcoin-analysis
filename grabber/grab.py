@@ -31,4 +31,18 @@ def grab_through_bit_ticker(crypto_currency, exchange_currency):
     t.save()
 
 
+def grab_coinbase_ticker(crypto_currency, exchange_currency):
+    data = vendors.get_coinbase_ticker(crypto_currency, exchange_currency)
+    t = Tick(
+        exchange_name=constants.EXCHANGE_COINBASE,
+        crypto_currency=crypto_currency,
+        exchange_currency=exchange_currency,
+        buy_price=data.pop('buy_price'),
+        sell_price=data.pop('sell_price'),
+        extra=data
+    )
+    t.save()
+
+
 grab_zebpay_ticker(constants.CURRENCY_INR)
+grab_coinbase_ticker(constants.CURRENCY_BITCOIN, constants.CURRENCY_USD)

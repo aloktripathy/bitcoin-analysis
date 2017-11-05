@@ -29,3 +29,17 @@ def get_through_bit_ticker(crypto_currency, exchange_currency):
         return data['data'][0]
 
     return None
+
+
+def get_coinbase_ticker(crypto_currency, exchange_currency):
+    headers = requests.utils.default_headers()
+    headers.update({
+        'CB-VERSION': '2015-04-08'
+    })
+    url_template = constants.EXCHANGE_URLS[constants.EXCHANGE_COINBASE]
+    buy_url = url_template.format(crypto_currency.upper(), exchange_currency.upper(), 'buy')
+    sell_url = url_template.format(crypto_currency.upper(), exchange_currency.upper(), 'sell')
+    buy_data = json.loads(requests.get(buy_url, headers=headers).text).get('data', {})
+    sell_data = json.loads(requests.get(sell_url, headers=headers).text).get('data', {})
+
+    return {'buy_price': float(buy_data['amount']), 'sell_price': float(sell_data['amount'])}
