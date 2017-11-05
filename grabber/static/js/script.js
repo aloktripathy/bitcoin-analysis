@@ -126,5 +126,5 @@ window.onload = function () {
     plot();
     setInterval(function () {
         plot();
-    }, 2000);
+    }, 1000*60*2);
 };
