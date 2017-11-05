@@ -9,4 +9,4 @@ PORT = 8080
 def index(name):
     return template('<b>Hello {{name}}</b>!', name=name)
 
-run(host=HOST, port=PORT)
+run(host=HOST, port=PORT, reloader=True)
