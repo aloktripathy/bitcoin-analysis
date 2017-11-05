@@ -1,6 +1,6 @@
 import pytz
 import datetime
-from bottle import route, run, request
+from bottle import route, run, request, static_file, template
 
 import settings
 import utils
@@ -9,6 +9,16 @@ from models import Tick
 HOST = 'localhost'
 PORT = 8080
 DEFAULT_DURATION = 60 * 60
+
+
+@route('/static/<filename:path>')
+def send_static(filename):
+    return static_file(filename, root='static')
+
+
+@route('/')
+def home():
+    return template('templates/home.html')
 
 
 @route('/ticks/<exchange>/<crypto_currency>/<exchange_currency>')
