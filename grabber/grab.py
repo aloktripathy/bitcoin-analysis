@@ -50,7 +50,7 @@ def grab_coin_secure_ticker():
     if not data:
         return
     t = Tick(
-        exchange_name=constants.EXCHANGE_COINBASE,
+        exchange_name=constants.EXCHANGE_COIN_SECURE,
         crypto_currency=constants.CURRENCY_BITCOIN,
         exchange_currency=constants.CURRENCY_INR,
         buy_price=data['ask'] / 100,
@@ -59,6 +59,6 @@ def grab_coin_secure_ticker():
     t.save()
 
 
-grab_zebpay_ticker(constants.CURRENCY_INR)
-grab_coinbase_ticker(constants.CURRENCY_BITCOIN, constants.CURRENCY_USD)
+# grab_zebpay_ticker(constants.CURRENCY_INR)
+# grab_coinbase_ticker(constants.CURRENCY_BITCOIN, constants.CURRENCY_USD)
 grab_coin_secure_ticker()
