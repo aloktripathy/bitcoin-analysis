@@ -59,6 +59,6 @@ def grab_coin_secure_ticker():
     t.save()
 
 
-# grab_zebpay_ticker(constants.CURRENCY_INR)
-# grab_coinbase_ticker(constants.CURRENCY_BITCOIN, constants.CURRENCY_USD)
+grab_zebpay_ticker(constants.CURRENCY_INR)
+grab_coinbase_ticker(constants.CURRENCY_BITCOIN, constants.CURRENCY_USD)
 grab_coin_secure_ticker()
