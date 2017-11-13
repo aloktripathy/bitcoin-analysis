@@ -10,6 +10,12 @@ def get_zebpay_ticker(exchange_currency):
     return json.loads(data.text)
 
 
+def get_coin_secure_ticker():
+    url = constants.EXCHANGE_URLS[constants.EXCHANGE_COIN_SECURE]
+    data = requests.get(url)
+    return json.loads(data.text, 'utf-8')
+
+
 def get_through_bit_ticker(crypto_currency, exchange_currency):
     headers = requests.utils.default_headers()
     headers.update({
