@@ -16,6 +16,7 @@ def grab_zebpay_ticker(currency):
         extra=data
     )
     t.save()
+    print(t.to_json())
 
 
 def grab_through_bit_ticker(crypto_currency, exchange_currency):
@@ -42,6 +43,7 @@ def grab_coinbase_ticker(crypto_currency, exchange_currency):
         extra=data
     )
     t.save()
+    print(t.to_json())
 
 
 def grab_coin_secure_ticker():
