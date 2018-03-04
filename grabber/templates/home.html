@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto ticks</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/style.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <script src="/static/js/script.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row nav">
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="exchange" id="ex-zebpay" value="zebpay" checked> Zebpay
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="exchange" id="ex-coinsecure" value="coin-secure"> Coin Secure
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="exchange" id="ex-coinbase" value="coinbase"> Coinbase
+        </label>
+        <!--<label class="btn btn-secondary">-->
+          <!--<input type="radio" name="exchange" id="ex-throughbit" value="throughbit"> Throughbit-->
+        <!--</label>-->
+      </div>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="crypto-currency" id="crypto-btc" value="btc" checked> Bitcoin
+        </label>
+        <!--<label class="btn btn-secondary">-->
+          <!--<input type="radio" name="crypto-currency" id="crypto-eth" value="eth"> Ethereum-->
+        <!--</label>-->
+        <!--<label class="btn btn-secondary">-->
+          <!--<input type="radio" name="crypto-currency" id="crypto-ltc" value="ltc"> Litecoin-->
+        <!--</label>-->
+      </div>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="ex-currency" id="ex-inr" value="inr" checked> INR
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="ex-currency" id="ex-usd" value="usd"> USD
+        </label>
+      </div>
+      <div class="btn-group float-right" data-toggle="buttons">
+        <label class="btn btn-secondary">
+          <input type="radio" name="duration" value="3600"> 1H
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="duration" value="10800"> 3H
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="duration" value="43200"> 12H
+        </label>
+        <label class="btn btn-secondary active">
+          <input type="radio" name="duration" value="86400" checked> 1D
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="duration" value="259200"> 3D
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="duration" value="604800"> 1W
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="duration" value="2592000"> 1M
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="duration" value="7776000"> 3M
+        </label>
+      </div>
+      <button class="btn btn-primary" onclick="plot();">Plot!</button>
+    </div>
+    <div id="chart-container"></div>
+    <div id="commission-container"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.nav {
+    margin: 10px;
+}
+
+.nav .btn-group {
+    margin: 0 5px 0 5px;
+}
+
+#chart-container, commission-container{
+    width: 100%;
+}
